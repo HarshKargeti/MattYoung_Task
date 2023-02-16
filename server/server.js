@@ -11,7 +11,7 @@ const Contact = require("./models/contactus");
 
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://matt-young-task.vercel.app"],
     methods: "GET,POST,PUT,DELETE,OPTIONS",
   })
 );
@@ -142,7 +142,6 @@ app.post("/login", async (req, res) => {
 
     else{
       const profile = (req.body.data);
-      console.log(profile);
 
       const existsInDB = await Contact.findOne({email:profile.email})
       if (!existsInDB) {
@@ -169,9 +168,6 @@ app.post("/login", async (req, res) => {
        
     }
 
-
-
-
   } catch (error) {
     res.status(500).json({
       message: error?.message || error,
@@ -179,6 +175,5 @@ app.post("/login", async (req, res) => {
   }
 });
 
-console.log(DB)
 
 app.listen("5152", () => console.log("Server running on port 5152"));

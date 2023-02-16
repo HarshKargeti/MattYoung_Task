@@ -5,7 +5,7 @@ import './css/SignUp.css';
 
 const SignUp = () => {
   const { handleGoogle, loading, error } = useFetch(
-    "http://localhost:5152/signup"
+    `${process.env.REACT_APP_BASE_URL}/signup`
   );
 
  
@@ -21,7 +21,7 @@ const SignUp = () => {
       email: email,
       password: password,
     }
-    const url = "http://localhost:5152/signup"
+    const url = `${process.env.REACT_APP_BASE_URL}/signup`
     fetch(url, {
       method: "POST",
       headers: {
@@ -51,7 +51,8 @@ const SignUp = () => {
 console.log(process.env.REACT_APP_GOOGLE_CLIENT_ID)
   useEffect(() => {
     /* global google */
-    if (window.google) {
+    const google = window.google;
+    if (google) {
       google.accounts.id.initialize({
         client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
         callback: handleGoogle,

@@ -6,12 +6,12 @@ import './css/Login.css';
 
 const Login = () => {
   const { handleGoogle, loading, error } = useFetch(
-    "http://localhost:5152/login"
+    `${process.env.REACT_APP_BASE_URL}/login`
   );
 
   useEffect(() => {
-    
-    if (window.google) {
+    const google = window.google;
+    if (google) {
       google.accounts.id.initialize({
         client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
         callback: handleGoogle,
@@ -40,7 +40,7 @@ const Login = () => {
       email: email,
       password: password,
     }
-    const url = "http://localhost:5152/signup"
+    const url = `${process.env.REACT_APP_BASE_URL}/signup`
     fetch(url, {
       method: "POST",
       headers: {
@@ -51,10 +51,6 @@ const Login = () => {
     })
     
     .then((res)=>{
-      console.log("result")
-      console.log(res);
-      console.log(data);
-      console.log(data.email)
       if (data?.email) {
         localStorage.setItem("user", JSON.stringify(data));
         window.location.reload();
