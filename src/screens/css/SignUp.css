@@ -1,0 +1,70 @@
+/*Utility classes*/
+
+
+body{
+    /* background-color: #00684A; */
+    background-color: rgb(218, 202, 202);
+}
+
+#signUp{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 34px;
+    position: relative;
+    background-color: white;
+    width: 50%;
+    margin-left: 30px;
+    padding: 56px;
+    border-radius: 10px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+#sign{
+    background-color: white;
+}
+
+#signUp input
+{
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 1.1rem;
+    /* border: 1px solid rgb(70, 63, 63); */
+    border-radius: 7px;
+    background-color: #f6f9fb;
+    
+}
+
+#signUp form{
+    width: 40%;
+}
+
+#signUp label{
+    font-size: 1.3rem;
+    background-color: white;
+    
+}
+
+.form-group{
+    margin-bottom: 12px;
+    width: 654px;
+    background-color: white;
+}
+
+.btnsubmit{
+    margin-right: 30px;
+    background-color: white;
+    color: black;
+    height: 40px;
+    
+    width: 230px;
+    font-size: 21px;
+    border-radius: 8px;
+}
+
+.btnsubmit:hover{
+    background-color: rgb(208, 194, 194);
+}
+
+
