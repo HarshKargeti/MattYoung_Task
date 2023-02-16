@@ -11,7 +11,7 @@ const Contact = require("./models/contactus");
 
 app.use(
   cors({
-    origin: ["https://matt-young-task.vercel.app"],
+    origin: ["https://matt-young-task-npyo-b10ezadvb-harshkargeti123-gmailcom.vercel.app"],
     methods: "GET,POST,PUT,DELETE,OPTIONS",
   })
 );
